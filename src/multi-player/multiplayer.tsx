@@ -49,16 +49,16 @@ function Editor({ roomId }: { roomId: string }) {
       <Tldraw
         showPages={false}
         {...events}
-        disableAssets={true}
-        // disableAssets={false}
-        // onAssetCreate={async (file: File, id: string) => {
-        //   const url = await uploadToStorage(file, id)
-        //   return url
-        // }}
-        // onAssetDelete={async (id: string) => {
-        //   await delteFromStorage(id)
-        //   return
-        // }}/>
+        // disableAssets={true}
+         disableAssets={false}
+         onAssetCreate={async (file: File, id: string) => {
+           const url = await uploadToStorage(file, id)
+           return url
+         }}
+         onAssetDelete={async (id: string) => {
+           await delteFromStorage(id)
+           return
+         }}/>
       />
     </div>
   )
